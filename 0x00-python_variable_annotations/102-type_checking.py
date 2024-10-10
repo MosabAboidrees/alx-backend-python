@@ -3,10 +3,10 @@
 Module for a function that zooms an array with type annotations.
 """
 
-from typing import List, Tuple, Any
+from typing import List, Tuple
 
 
-def zoom_array(lst: Tuple, factor: int = 2) -> List[Any]:
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
     """
     Zooms in an array by repeating its items by a given factor.
 
