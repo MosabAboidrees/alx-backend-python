@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
+"""
+This module provides a function `wait_n` that spawns a specified number of
+coroutines using the `wait_random` function from the `0-basic_async_syntax`
+module. The coroutines are executed concurrently, and the function returns
+a list of delays in ascending order.
+
+Functions:
+    wait_n(n: int, max_delay: int) -> List[float]:
+        Spawns `wait_random` n times with the specified max_delay
+        and returns a list of all the delays in ascending order.
+"""
 
 import asyncio
 from typing import List
-
-"""
-Module for executing multiple coroutines concurrently.
-"""
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
