@@ -21,7 +21,7 @@ async def wait_random(max_delay: int = 10) -> float:
     # Define an asynchronous function that takes
     # an integer max_delay with a default value of 10
     # Generate a random float between 0 and max_delay
-    delay = random.uniform(0, max_delay)
+    delay = random.random() * max_delay
     # Pause the coroutine for the duration of the delay
     await asyncio.sleep(delay)
     # Return the actual delay
