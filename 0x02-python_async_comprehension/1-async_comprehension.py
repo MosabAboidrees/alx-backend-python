@@ -4,8 +4,8 @@ This module contains a coroutine that measures the runtime of executing
 async_comprehension four times in parallel.
 """
 
-import asyncio
-import time
+from asyncio import sleep
+from random import uniform
 from typing import List
 
 async_generator = __import__('0-async_generator').async_generator
