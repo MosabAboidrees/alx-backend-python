@@ -66,5 +66,5 @@ class TestGetJson(unittest.TestCase):
             # Call the function with the test URL
             result = get_json(test_url)
 
-        # Assert that the function output matches the test payload
-        self.assertEqual(result, test_payload)
+            # Assert that the function output matches the test payload
+            self.assertEqual(result, test_payload)
