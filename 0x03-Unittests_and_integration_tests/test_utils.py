@@ -48,10 +48,12 @@ class TestGetJson(unittest.TestCase):
     """
 
     @patch("utils.requests.get")
-    @parameterized.expand([
-        ("http://example.com", {"payload": True}),
-        ("http://holberton.io", {"payload": False}),
-    ])
+    @parameterized.expand(
+        [
+            ("http://example.com", {"payload": True}),
+            ("http://holberton.io", {"payload": False}),
+        ]
+    )
     def test_get_json(self, test_url, test_payload, mock_get):
         """
         Test that get_json returns the expected output and makes an HTTP call.
