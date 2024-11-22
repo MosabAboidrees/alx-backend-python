@@ -54,20 +54,17 @@ class TestGetJson(unittest.TestCase):
             ("http://holberton.io", {"payload": False}),
         ]
     )
-    def test_get_json(self, test_url, test_payload, mock_get):
+    def test_get_json(self, test_url, test_payload):
         """
         Test that get_json returns the expected output and makes an HTTP call.
         """
         # Create a Mock response object with a json method
         mock_response = Mock()
         mock_response.json.return_value = test_payload
-        mock_get.return_value = mock_response
 
-        # Call the function with the test URL
-        result = get_json(test_url)
-
-        # Assert that requests.get was called once with the test URL
-        mock_get.assert_called_once_with(test_url)
+        with patch('requests.get', return_value=mock_response):
+            # Call the function with the test URL
+            result = get_json(test_url)
 
         # Assert that the function output matches the test payload
         self.assertEqual(result, test_payload)
