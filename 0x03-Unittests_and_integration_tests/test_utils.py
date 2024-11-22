@@ -47,11 +47,10 @@ class TestGetJson(unittest.TestCase):
     Test suite for get_json function in utils module.
     """
 
-    @patch("utils.requests.get")
     @parameterized.expand(
         [
-            ("http://example.com", {"payload": True}),
-            ("http://holberton.io", {"payload": False})
+            ('http://example.com', {'payload': True}),
+            ('http://holberton.io', {'payload': False})
         ]
     )
     def test_get_json(self, test_url, test_payload):
